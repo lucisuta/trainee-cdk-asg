@@ -1,14 +1,20 @@
-# Welcome to your CDK TypeScript project
+# Trainee CDK (ASG)
 
-This is a blank project for CDK development with TypeScript.
+[Cloud Development Kit](https://aws.amazon.com/cdk/) (CDK) backend
+to build and deploy the [trainee-frontend](http://github.com/lucisuta/trainee-frontend)
+demo application to an AWS autoscaling group of EC2 instances
+in an automated manner.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+Demonstrates how to use
+[CodePipeline](https://aws.amazon.com/codepipeline/),
+[CodeBuild](https://aws.amazon.com/codebuild/),
+and [CodeDeploy](https://aws.amazon.com/codedeploy/).
 
-## Useful commands
+### CDK Commands
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+* `npm run build` compile TypeScript to JS
+* `npm run watch` watch for changes and compile
+* `npm run test` perform the Jest unit tests
+* `npx cdk deploy` deploy this stack to your default AWS account and region
+* `npx cdk diff` compare deployed stack with current state
+* `npx cdk synth` emits the synthesized CloudFormation template
