@@ -8,6 +8,10 @@ export interface TraineeInfrastructureProps {
 }
 
 export class TraineeInfrastructure extends Construct {
+	/**
+	 * Autoscaling group created by this construct.
+	 * We need to expose it from this construct so it can be used in the pipeline construct.
+	 */
 	public readonly autoScalingGroup: asg.AutoScalingGroup;
 
 	constructor(scope: Construct, id: string, props: TraineeInfrastructureProps) {
@@ -47,7 +51,7 @@ export class TraineeInfrastructure extends Construct {
 			machineImage: ec2.MachineImage.genericLinux({
 				'eu-north-1': 'ami-0fe8bec493a81c7da'
 			}),
-			keyName: props.keyPairName,
+			keyPair: ec2.KeyPair.fromKeyPairName(this, 'trainee-key-pair', props.keyPairName),
 			securityGroup: sg,
 			instanceMetadataTags: true,
 			requireImdsv2: true,
